@@ -31,10 +31,14 @@ selected_ids = []
 
 while True:
     selected_id = input("Please input a product identifier: ")
+    if selected_id not in matching_product:
+        print("Oops, please choose a product id from our product list")
     if selected_id == "DONE":
         break
     else:
         selected_ids.append(selected_id)
+
+
 
 ################################
 #OUTPUT DISPLAY
