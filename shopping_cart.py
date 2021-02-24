@@ -1,4 +1,3 @@
-print("Hello")
 # shopping_cart.py
 
 products = [
@@ -23,14 +22,13 @@ products = [
     {"id":19, "name": "Gluten Free Quinoa Three Cheese & Mushroom Blend", "department": "dry goods pasta", "aisle": "grains rice dried goods", "price": 3.99},
     {"id":20, "name": "Pomegranate Cranberry & Aloe Vera Enrich Drink", "department": "beverages", "aisle": "juice nectars", "price": 4.25}
 ] # based on data from Instacart: https://www.instacart.com/datasets/grocery-shopping-2017
-print(products)
+#print(products)
 
 #INPUTS CAPTURE
 selected_id = input("Please input a product identifier: ")
 matching_products = [p for p in products if str(p["id"]) == str(selected_id)]
 matching_product = matching_products[0]
-print(matching_product)
-print(type(matching_product))
+print("SELECTED PRODUCT: " + matching_product["name"] + str(matching_product["price"]))
 #OUTPUT DISPLAY
 
 
