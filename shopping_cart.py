@@ -31,8 +31,8 @@ selected_ids = []
 
 while True:
     selected_id = input("Please input a product identifier: ")
-    if selected_id not in matching_product:
-        print("Oops, please choose a product id from our product list")
+    #if selected_id not in matching_product:
+        #print("Oops, please choose a product id from our product list")
     if selected_id == "DONE":
         break
     else:
@@ -42,13 +42,15 @@ while True:
 
 ################################
 #OUTPUT DISPLAY
-
+import datetime
+now = datetime.datetime.now()
 #print(selected_ids)
+#A grocery store name of your choice
 print("----------------------------------------")
 print("MY GROCERY STORE")
 print("WWW.MYGROCERYWHATNOT")
 print("----------------------------------------")
-print("CHECKOUT AT: ")
+print("CHECKOUT AT: ", now.strftime("%Y-%m-%d %H:%M:%S"))
 print("----------------------------------------")
 
 
@@ -59,7 +61,7 @@ for selected_id in selected_ids:
     print("SELECTED PRODUCT: " + matching_product["name"] + "" + str(matching_product["price"]))
 
 print("----------------------------------------")
-print("SUBTOTAL: " + str(total_price))
+print("SUBTOTAL: ", total_price)
 tax_rate = 0.0875
 sales_tax = total_price * tax_rate
 print("TAX: " + str(sales_tax))
@@ -70,7 +72,6 @@ print("THANK YOU, PLEASE COME AGAIN")
 print("----------------------------------------")
 
 
-#A grocery store name of your choice
 #A grocery store phone number and/or website URL and/or address of choice
 #The date and time of the beginning of the checkout process, formatted in a human-friendly way (e.g. 2020-02-07 03:54 PM)
 #The name and price of each shopping cart item, price being formatted as US dollars and cents (e.g. $3.50, etc.)
