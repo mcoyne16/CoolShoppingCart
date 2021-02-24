@@ -56,8 +56,11 @@ for selected_id in selected_ids:
 
 print("----------------------------------------")
 print("SUBTOTAL: " + str(total_price))
-print("TAX: ")
-print("TOTAL: ") 
+tax_rate = 0.0875
+sales_tax = total_price * tax_rate
+print("TAX: " + str(sales_tax))
+final_price = total_price + sales_tax
+print("TOTAL: " + str(final_price)) 
 print("----------------------------------------")
 print("THANK YOU, PLEASE COME AGAIN")
 print("----------------------------------------")
