@@ -40,15 +40,27 @@ while True:
 #OUTPUT DISPLAY
 
 #print(selected_ids)
+print("----------------------------------------")
+print("MY GROCERY STORE")
+print("WWW.MYGROCERYWHATNOT")
+print("----------------------------------------")
+print("CHECKOUT AT: ")
+print("----------------------------------------")
+
+
 for selected_id in selected_ids:
     matching_products = [p for p in products if str(p["id"]) == str(selected_id)]
     matching_product = matching_products[0]
     total_price = total_price + matching_product["price"]
     print("SELECTED PRODUCT: " + matching_product["name"] + "" + str(matching_product["price"]))
-    
 
-
-print("TOTAL PRICE: " +str(total_price))
+print("----------------------------------------")
+print("SUBTOTAL: " + str(total_price))
+print("TAX: ")
+print("TOTAL: ") 
+print("----------------------------------------")
+print("THANK YOU, PLEASE COME AGAIN")
+print("----------------------------------------")
 
 
 #A grocery store name of your choice
