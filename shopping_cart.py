@@ -1,5 +1,7 @@
 # shopping_cart.py
 
+import datetime
+
 products = [
     {"id":1, "name": "Chocolate Sandwich Cookies", "department": "snacks", "aisle": "cookies cakes", "price": 3.50},
     {"id":2, "name": "All-Seasons Salt", "department": "pantry", "aisle": "spices seasonings", "price": 4.99},
@@ -23,6 +25,9 @@ products = [
     {"id":20, "name": "Pomegranate Cranberry & Aloe Vera Enrich Drink", "department": "beverages", "aisle": "juice nectars", "price": 4.25}
 ] # based on data from Instacart: https://www.instacart.com/datasets/grocery-shopping-2017
 #print(products)
+import operator
+def to_usd(my_price):
+    return f"${my_price:,.2f}"
 
 ################################
 #INPUTS CAPTURE
@@ -43,25 +48,21 @@ while True:
 
 ################################
 #OUTPUT DISPLAY
-import datetime
-import operator
 
-#print(selected_ids)
 print("----------------------------------------")
 print("MY GROCERY STORE")
 print("WWW.MYCOOLGROCERYSTORE.COM")
 print("----------------------------------------")
 
-from datetime import datetime
 date = datetime.date.today()
 time = datetime.datetime.now()
-print("CHECKOUT AT: ", date, time.strftime("%I:%M %p"))
+print("CHECKOUT AT: ", date, time.strftime("%I:%M:%S %p"))
 print("----------------------------------------")
 
-print("SELECTED PRODUCT:")
-for selected_id in selected_ids:
+print("SELECTED PRODUCTS:")
+for matching_product in selected_ids:
     total_price = total_price + matching_product["price"]
-    print("...", matching_product["name"], "", )  #'${}:,.2f}'.format(matching_product["price"]))
+    print("...", matching_product["name"], " ", str(to_usd(matching_product["price"])))
 
 print("----------------------------------------")
 print("SUBTOTAL: ", total_price)
@@ -73,17 +74,3 @@ print("TOTAL: " + str(final_price))
 print("----------------------------------------")
 print("THANK YOU, PLEASE COME AGAIN")
 print("----------------------------------------")
-
-
-
-#A grocery store phone number and/or website URL and/or address of choice
-    #fine, do i need real url is that extra?
-#The date and time of the beginning of the checkout process, formatted in a human-friendly way (e.g. 2020-02-07 03:54 PM)
-    #fix format
-#The name and price of each shopping cart item, price being formatted as US dollars and cents (e.g. $3.50, etc.)
-#The total cost of all shopping cart items (i.e. the "subtotal"), formatted as US dollars and cents (e.g. $19.47), calculated as the sum of their prices
-#The amount of tax owed (e.g. $1.70), calculated by multiplying the total cost by a New York City sales tax rate of 8.75% (for the purposes of this project, groceries are not exempt from sales tax)
-#The total amount owed, formatted as US dollars and cents (e.g. $21.17), calculated by adding together the amount of tax owed plus the total cost of all shopping cart items
-#A friendly message thanking the customer and/or encouraging the customer to shop again
-
-
