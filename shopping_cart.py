@@ -63,7 +63,7 @@ print("----------------------------------------")
 print("SELECTED PRODUCTS:")
 for matching_product in selected_ids:
     total_price = total_price + matching_product["price"]
-    print("...", matching_product["name"], " ", str(to_usd(matching_product["price"])))
+    print("...", matching_product["name"], "(", str(to_usd(matching_product["price"])), ")")
 
 print("----------------------------------------")
 print("SUBTOTAL: ", str(to_usd(total_price)))
