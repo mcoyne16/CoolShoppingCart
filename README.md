@@ -11,11 +11,13 @@ Then navigate there from the command line (subsequent commands assume you are ru
 ## Setup
 
 First, create and activate a new virtual environment, perhaps called "shopping-env"
+
     conda create =n shopping_env python=3.8
     conda activate shopping-env
     pip install -r requirements.txt
 
 After cloning the repo, navigate there from the command line
+
     cd ~/Desktop/CoolShoppingCart
 
 Within the new virtual environemtn, demonstrate your ability to run the Python script from the command-line:
