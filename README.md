@@ -15,6 +15,7 @@ First, create and activate a new virtual environment, perhaps called "shopping-e
     conda create =n shopping_env python=3.8
     conda activate shopping-env
     pip install -r requirements.txt
+    pip install sendgrid
 
 After cloning the repo, navigate there from the command line
 
