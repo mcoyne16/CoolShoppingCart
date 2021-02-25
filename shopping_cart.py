@@ -29,36 +29,39 @@ products = [
 total_price = 0
 selected_ids = []
 
+
 while True:
     selected_id = input("Please input a product identifier: ")
-    #if selected_id not in matching_product:
-        #print("Oops, please choose a product id from our product list")
+    matching_products = [p for p in products if str(p["id"]) == str(selected_id)]
+    matching_product = matching_products[0]
+    if selected_id not in matching_product:
+        print("Oops, please choose a product id from our product list")
     if selected_id == "DONE":
         break
     else:
         selected_ids.append(selected_id)
 
-
-
 ################################
 #OUTPUT DISPLAY
 import datetime
-now = datetime.datetime.now()
+import operator
+
 #print(selected_ids)
 #A grocery store name of your choice
 print("----------------------------------------")
 print("MY GROCERY STORE")
 print("WWW.MYGROCERYWHATNOT")
 print("----------------------------------------")
-print("CHECKOUT AT: ", now.strftime("%Y-%m-%d %H:%M:%S"))
+from datetime import datetime
+d = datetime.datetime.now()
+
+print("CHECKOUT AT: ", d.strftime("%I:%M %p"))
 print("----------------------------------------")
 
-
+print("SELECTED PRODUCT:")
 for selected_id in selected_ids:
-    matching_products = [p for p in products if str(p["id"]) == str(selected_id)]
-    matching_product = matching_products[0]
     total_price = total_price + matching_product["price"]
-    print("SELECTED PRODUCT: " + matching_product["name"] + "" + str(matching_product["price"]))
+    print("...", matching_product["name"], "", )  #'${}:,.2f}'.format(matching_product["price"]))
 
 print("----------------------------------------")
 print("SUBTOTAL: ", total_price)
@@ -72,8 +75,11 @@ print("THANK YOU, PLEASE COME AGAIN")
 print("----------------------------------------")
 
 
+
 #A grocery store phone number and/or website URL and/or address of choice
+    #fine, do i need real url is that extra?
 #The date and time of the beginning of the checkout process, formatted in a human-friendly way (e.g. 2020-02-07 03:54 PM)
+    #fix format
 #The name and price of each shopping cart item, price being formatted as US dollars and cents (e.g. $3.50, etc.)
 #The total cost of all shopping cart items (i.e. the "subtotal"), formatted as US dollars and cents (e.g. $19.47), calculated as the sum of their prices
 #The amount of tax owed (e.g. $1.70), calculated by multiplying the total cost by a New York City sales tax rate of 8.75% (for the purposes of this project, groceries are not exempt from sales tax)
