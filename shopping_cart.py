@@ -50,7 +50,8 @@ while True:
 #OUTPUT DISPLAY
 
 print("----------------------------------------")
-print("MY GROCERY STORE")
+print("MATT'S GROCERY STORE")
+print("1 BAD ROUTE ROAD, GLENDIVE, MONTANA")
 print("WWW.MYCOOLGROCERYSTORE.COM")
 print("----------------------------------------")
 
@@ -65,12 +66,12 @@ for matching_product in selected_ids:
     print("...", matching_product["name"], " ", str(to_usd(matching_product["price"])))
 
 print("----------------------------------------")
-print("SUBTOTAL: ", total_price)
+print("SUBTOTAL: ", str(to_usd(total_price)))
 tax_rate = 0.0875
 sales_tax = total_price * tax_rate
-print("TAX: " + str(sales_tax))
+print("TAX:       " + str(to_usd(sales_tax)))
 final_price = total_price + sales_tax
-print("TOTAL: " + str(final_price)) 
+print("TOTAL:     " + str(to_usd(final_price)))
 print("----------------------------------------")
-print("THANK YOU, PLEASE COME AGAIN")
+print("THANK YOU, PLEASE COME AGAIN!")
 print("----------------------------------------")
