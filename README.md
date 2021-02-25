@@ -21,6 +21,7 @@ After cloning the repo, navigate there from the command line
     cd ~/Desktop/CoolShoppingCart
 
 Within the new virtual environemtn, demonstrate your ability to run the Python script from the command-line:
+   
     python shopping_cart.py
 
 Next, in the root directory of your local repository, create a new file called ".env", and update the contents of the ".env" file to specify your desired tax rate depending on region:
