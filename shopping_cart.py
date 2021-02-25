@@ -1,6 +1,9 @@
 # shopping_cart.py
 
 import datetime
+import os
+from dotenv import load_dotenv
+load_dotenv()
 
 products = [
     {"id":1, "name": "Chocolate Sandwich Cookies", "department": "snacks", "aisle": "cookies cakes", "price": 3.50},
@@ -67,8 +70,8 @@ for matching_product in selected_ids:
 
 print("----------------------------------------")
 print("SUBTOTAL: ", str(to_usd(total_price)))
-tax_rate = 0.0875
-sales_tax = total_price * tax_rate
+tax_rate = os.getenv("TAX_RATE", default="0.0875")
+sales_tax = total_price * float(tax_rate)
 print("TAX:       " + str(to_usd(sales_tax)))
 final_price = total_price + sales_tax
 print("TOTAL:     " + str(to_usd(final_price)))

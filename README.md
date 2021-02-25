@@ -11,13 +11,19 @@ Then navigate there from the command line (subsequent commands assume you are ru
 ## Setup
 
 First, create and activate a new virtual environment, perhaps called "shopping-env"
-# conda create =n shopping_env python=3.8
-# conda activate shopping-env
+    conda create =n shopping_env python=3.8
+    conda activate shopping-env
+    pip install -r requirements.txt
 
+After cloning the repo, navigate there from the command line
+    cd ~/Desktop/CoolShoppingCart
 
-Next, in the root directory of your local repository, create a new file called ".env", and update the contents of the ".env" file to specify your desired tax rate:
+Within the new virtual environemtn, demonstrate your ability to run the Python script from the command-line:
+    python shopping_cart.py
 
-    USER_NAME = "Firstname Lastname"
+Next, in the root directory of your local repository, create a new file called ".env", and update the contents of the ".env" file to specify your desired tax rate depending on region:
+
+    TAX_RATE=0.0875
 
 > NOTE: the ".env" file is usually the place for passing configuration options and secret credentials, so as a best practice we don't upload this file to version control (which is accomplished via a corresponding entry in the [.gitignore](/.gitignore) file)
 
@@ -26,5 +32,4 @@ Next, in the root directory of your local repository, create a new file called "
 Now you are ready to use the tool.  You can enter or scan any number corresponding to a product id in the products list.  If you make an invalid entry, the program will prompt you to try again.
 
 Once you are finished entering the selected products, type "done" and press enter.  Your receipt will then be generated showing information about the location, time, subtotal, and a list of items purchased.
-
 
