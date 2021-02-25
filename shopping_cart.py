@@ -28,18 +28,18 @@ products = [
 #INPUTS CAPTURE
 total_price = 0
 selected_ids = []
-
-
 while True:
-    selected_id = input("Please input a product identifier: ")
-    matching_products = [p for p in products if str(p["id"]) == str(selected_id)]
-    matching_product = matching_products[0]
-    if selected_id not in matching_product:
-        print("Oops, please choose a product id from our product list")
-    if selected_id == "DONE":
-        break
-    else:
-        selected_ids.append(selected_id)
+    try:
+        selected_id = input("Please input a product identifier: ")
+        if selected_id.lower() == "done":
+            break
+        else:
+            matching_products = [p for p in products if str(p["id"]) == str(selected_id)]
+            matching_product = matching_products[0]
+            total_price = total_price + matching_product["price"]
+            selected_ids.append(matching_product)
+    except:
+        print("Oops, please choose a valid ID from our product list")
 
 ################################
 #OUTPUT DISPLAY
@@ -47,15 +47,15 @@ import datetime
 import operator
 
 #print(selected_ids)
-#A grocery store name of your choice
 print("----------------------------------------")
 print("MY GROCERY STORE")
-print("WWW.MYGROCERYWHATNOT")
+print("WWW.MYCOOLGROCERYSTORE.COM")
 print("----------------------------------------")
-from datetime import datetime
-d = datetime.datetime.now()
 
-print("CHECKOUT AT: ", d.strftime("%I:%M %p"))
+from datetime import datetime
+date = datetime.date.today()
+time = datetime.datetime.now()
+print("CHECKOUT AT: ", date, time.strftime("%I:%M %p"))
 print("----------------------------------------")
 
 print("SELECTED PRODUCT:")
